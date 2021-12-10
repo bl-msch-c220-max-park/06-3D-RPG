@@ -7,6 +7,7 @@ var velocity = Vector3()
 var gravity = -9.8 
 var speed = 0.2
 var max_speed = 4
+var add_damage = null
 
 var mouse_sensitivity = 0.002
 var target = null 
@@ -30,11 +31,16 @@ func _physics_process(_delta):
 	
 	$AnimationTree.set("parameters/Idle_Run/blend_amount", current_speed/max_speed)
 	velocity = move_and_slide(velocity, Vector3.UP, true)
-	
-	
-	
 	if Input.is_action_just_pressed("shoot") and target != null and target.is_in_group("target"):
 		target.die()
+		
+	if global_transform.origin.y < -15:
+		get_tree().change_scene("res://Game_Over.tscn")
+	if Global.timer < 0:
+		get_tree().change_scene("res://Game_Over.tscn")
+	if get_node("/root/Game/Target_container").get_child_count() == 0:
+		get_tree().change_scene("res://Win.tscn")
+		
 	
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -55,3 +61,6 @@ func get_input():
 	input_dir = input_dir.normalized()
 	return input_dir
 		
+
+func damage():
+	get_node("/root/Game/UI").add_damage(0,5)

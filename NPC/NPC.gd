@@ -19,7 +19,7 @@ func _on_Area_body_entered(body):
 
 
 func _on_Area_body_exited(body):
-	Dialogue.hide_dialogue
+	Dialogue.hide_dialogue()
 	
 func finished():
 	get_node("/root/Game/Target_container").show()

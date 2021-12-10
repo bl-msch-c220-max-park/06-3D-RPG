@@ -49,6 +49,7 @@ surfaces/2 = {
 [node name="Target" type="StaticBody" groups=[
 "target",
 ]]
+collision_mask = 3
 script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]

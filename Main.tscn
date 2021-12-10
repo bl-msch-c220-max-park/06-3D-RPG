@@ -1,0 +1,70 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://UI/Main.gd" type="Script" id=1]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.913725, 0.776471, 0.486275, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 433.948
+margin_top = 160.718
+margin_right = 600.948
+margin_bottom = 174.718
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Camper Hunter Adventure"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 307.476
+margin_top = 233.302
+margin_right = 725.476
+margin_bottom = 247.302
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Shoot All the Targets before time runs out. Don't fall off  the map!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 432.848
+margin_top = 310.285
+margin_right = 599.848
+margin_bottom = 375.285
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "WASD - To Move
+Space - To Shoot
+E - Actions
+ESC - Quit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="."]
+margin_left = 475.095
+margin_top = 430.005
+margin_right = 566.095
+margin_bottom = 485.005
+text = "Play"
+
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
